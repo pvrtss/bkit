@@ -4,10 +4,6 @@ class Square(Rectangle):
     
     FIGURE_TYPE = "Квадрат"
 
-    @classmethod
-    def get_figure_type(cls):
-        return cls.FIGURE_TYPE
-
     def __init__(self, length, color):
         '''
         Конструктор

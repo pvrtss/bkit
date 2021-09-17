@@ -5,10 +5,6 @@ class Rectangle(Shape):
     
     FIGURE_TYPE = "Прямоугольник"
 
-    @classmethod
-    def get_figure_type(cls):
-        return cls.FIGURE_TYPE
-    
     def __init__(self, width, height, color):
         '''
         Конструктор
