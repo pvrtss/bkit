@@ -99,9 +99,6 @@ def main():
     else:
         len_roots = len(roots)
         if len_roots == 0:
-            if a == b == c == 0.0:
-                print("x - любое действительное число")
-            else:
                 print('Нет действительных корней')
         elif len_roots == 1:
             print('Один корень: {}'.format(roots[0]))
