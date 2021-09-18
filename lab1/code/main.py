@@ -99,7 +99,7 @@ def main():
     else:
         len_roots = len(roots)
         if len_roots == 0:
-                print('Нет действительных корней')
+            print('Нет действительных корней')
         elif len_roots == 1:
             print('Один корень: {}'.format(roots[0]))
         elif len_roots == 2:
