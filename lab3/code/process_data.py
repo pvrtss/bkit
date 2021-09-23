@@ -2,15 +2,15 @@ import sys
 import json
 from lab_python_fp import cm_timer_1, Unique, field, print_result, gen_random
 
-'''
+
 try:
     path = sys.argv[1]
 except IndexError:
-    print("Не указан путь к файлу. Попробуйте ещё раз.")
+    raise ValueError("Не указан путь к файлу.")
 else:
     with open(path, encoding='utf-8') as f:
         data = json.load(f)
-'''
+
 
 path = sys.argv[1]
 
@@ -32,7 +32,7 @@ def f3(lst):
 
 @print_result
 def f4(lst):
-    return list(zip(lst, list('зарплата {} руб.'.format(num) for num in gen_random(len(lst), 100000, 200000))))
+    return dict(zip(lst, list('зарплата {} руб.'.format(num) for num in gen_random(len(lst), 1000000, 2000000))))
 
 if __name__ == '__main__':
     with cm_timer_1():

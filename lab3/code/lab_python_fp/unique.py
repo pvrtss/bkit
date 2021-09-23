@@ -18,7 +18,7 @@ class Unique(object):
                 if self.ic == True and isinstance(current, str):
                     temp = current[:]
                     if temp.lower() not in self.seen:
-                        self.seen.add(current)
+                        self.seen.add(temp.lower())
                         return current
                 elif current not in self.seen:
                     self.seen.add(current)
