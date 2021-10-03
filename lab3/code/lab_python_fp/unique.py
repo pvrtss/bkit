@@ -1,4 +1,4 @@
-# from gen_random import gen_random
+from .gen_random import gen_random
 
 class Unique(object):
     def __init__(self, items, ignore_case = False, **kwargs):
@@ -13,7 +13,7 @@ class Unique(object):
             try:
                 current = next(it)
             except StopIteration:
-                raise StopIteration 
+                raise 
             else:
                 if self.ic == True and isinstance(current, str):
                     temp = current[:]
@@ -28,9 +28,9 @@ class Unique(object):
         return self
 
 if __name__ == '__main__':
-    lst = ['a', 'b', 'c', 'd', 'c',"A", "B", "C", 'c', 'b', 1, 2, 2, 3, 3, 1, 2, 3, 4]
+    lst = ['a', "B", 'c', 'd', 'c',"A", 'b', "C", 'c', 'b', 1, 2, 2, 3, 3, 1, 2, 3, 4]
 
-    # print(list(Unique(gen_random(50, 1, 4))))
+    print(list(Unique(gen_random(50, 1, 4))))
 
     print(list(Unique(lst)))
 

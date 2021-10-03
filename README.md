@@ -15,4 +15,4 @@
 ### 3. "Функциональные возможности языка Python"
 
 * [Код](https://github.com/pvrtss/bkit/tree/main/lab3/code)
-<!-- * [Отчет](https://github.com/pvrtss/bkit/blob/main/lab3/report.pdf) -->
+* [Отчет](https://github.com/pvrtss/bkit/blob/main/lab3/report.pdf)

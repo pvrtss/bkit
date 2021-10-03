@@ -11,13 +11,6 @@ else:
     with open(path, encoding='utf-8') as f:
         data = json.load(f)
 
-
-path = sys.argv[1]
-
-with open(path, encoding='utf-8') as f:
-    data = json.load(f)
-
-
 @print_result
 def f1(lst):
     return sorted(list(Unique(field(lst, 'job-name'), ignore_case=True)), key=str.lower)

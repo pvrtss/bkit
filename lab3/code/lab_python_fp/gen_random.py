@@ -5,5 +5,5 @@ def gen_random(amount, begin, end):
         yield random.randint(begin, end)
 
 if __name__ == '__main__':
-    for i in gen_random(5, 1, 10):
-        print(i)
+    print(list(gen_random(5, 1, 10)))
+    print(list(gen_random(10, 1, 100)))
