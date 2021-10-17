@@ -1,7 +1,7 @@
 .vscode/
-lab2/Scripts
-lab2/Lib
-lab2/*.cfg
+labs/lab2/Scripts
+labs/lab2/Lib
+labs/lab2/*.cfg
 __pypackages__/
 __pycache__/
 *.py[cod]
