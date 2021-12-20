@@ -1,29 +1,30 @@
-from chair_factory import ModernBuilder, VintageBuilder, Chair
+from chair_factory import ModernBuilder, VintageBuilder
 
 if __name__ == "__main__":
-    while(True):
+    while True:
         print("Выберите стиль стула для производства: \n    1: Модерн\n    2: Винтаж")
         choice = int(input())
-        print("Введите вес: ")
-        weight = int(input())
-        print("Введите цену: ")
-        cost = int(input())
-        if choice == 1:
-            chair = ModernBuilder().build_chair(weight, cost)
+        if choice in [1, 2]:
+            print("Введите вес: ")
+            weight = int(input())
+            print("Введите цену: ")
+            cost = int(input())
+            print()
+            if choice == 1:
+                chair = ModernBuilder().build_chair(weight, cost)
+            else:
+                chair = VintageBuilder().build_chair(weight, cost)
             print()
             chair.print_info()
+            print()
             chair.print_desc()
             print()
-        elif choice == 2:
-            chair = VintageBuilder().build_chair(weight, cost)
-            print()
-            chair.print_info()
-            chair.print_desc()
             print()
         else:
             print("Неверный ввод - повторите попытку.")
-        print()
+            print()
         print("Выберите действие: \n    1: Повторить\n    2: Выход")
+        print("\n")
         action = int(input())
         if action == 2:
             break

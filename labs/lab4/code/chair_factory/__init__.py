@@ -1,0 +1,1 @@
+from .factory import Chair, ModernBuilder, ModernChair, VintageBuilder, VintageChair

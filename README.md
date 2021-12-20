@@ -1,5 +1,7 @@
 # Курс БКИТ
 
+_Репозиторий курса "Базовые компоненты интернет-технологий", кафедра ИУ5, осень 2021_
+***
 ## Рубежные контроли
 
 ### РК1
@@ -27,3 +29,9 @@
 
 * [Код](https://github.com/pvrtss/bkit/tree/main/labs/lab3/code)
 * [Отчет](https://github.com/pvrtss/bkit/blob/main/labs/lab3/report.pdf)
+
+### 4. "Шаблоны проектирования и модульное тестирование в Python"
+
+* [Код](https://github.com/pvrtss/bkit/tree/main/labs/lab4/code)
+* [Тесты](https://github.com/pvrtss/bkit/tree/main/labs/lab4/tests)
+* [Отчет](https://github.com/pvrtss/bkit/blob/main/labs/lab4/report.pdf)
