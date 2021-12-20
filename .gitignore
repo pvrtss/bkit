@@ -1,5 +1,6 @@
 .vscode/
 labs/lab2/Scripts
+labs/lab5/code/resources/
 labs/lab2/Lib
 labs/lab2/*.cfg
 __pypackages__/

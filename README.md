@@ -2,6 +2,7 @@
 
 _Репозиторий курса "Базовые компоненты интернет-технологий", кафедра ИУ5, осень 2021_
 ***
+
 ## Рубежные контроли
 
 ### РК1
@@ -35,3 +36,8 @@ _Репозиторий курса "Базовые компоненты инте
 * [Код](https://github.com/pvrtss/bkit/tree/main/labs/lab4/code)
 * [Тесты](https://github.com/pvrtss/bkit/tree/main/labs/lab4/tests)
 * [Отчет](https://github.com/pvrtss/bkit/blob/main/labs/lab4/report.pdf)
+
+### 5. "Разработка простого бота для Telegram с использованием языка Python"
+
+* [Код](https://github.com/pvrtss/bkit/tree/main/labs/lab5/code)
+* [Отчет](https://github.com/pvrtss/bkit/blob/main/labs/lab5/report.pdf)
