@@ -41,3 +41,13 @@ _Репозиторий курса "Базовые компоненты инте
 
 * [Код](https://github.com/pvrtss/bkit/tree/main/labs/lab5/code)
 * [Отчет](https://github.com/pvrtss/bkit/blob/main/labs/lab5/report.pdf)
+
+### 6. "Разработка бота на основе конечного автомата для Telegram с использованием языка Python"
+
+* [Код](https://github.com/pvrtss/bkit/tree/main/labs/lab6/code)
+* [Отчет](https://github.com/pvrtss/bkit/blob/main/labs/lab6/report.pdf)
+
+## Домашнее задание
+
+* [Код](https://github.com/pvrtss/bkit/tree/main/dz/code)
+* [Отчет](https://github.com/pvrtss/bkit/blob/main/dz/report.pdf)
