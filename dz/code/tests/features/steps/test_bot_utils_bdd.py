@@ -1,5 +1,5 @@
+from behave import given, then
 import babel.numbers as bab
-import unittest
 from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 from config import CRYPTO_API_TOKEN
@@ -25,20 +25,24 @@ def get_exchange_rate(crypto, curr):
 def cformat(number: float, currency: str):
     return bab.format_currency(number, currency, locale="ru_RU")
 
-class TestBotUtilities(unittest.TestCase):
-    def test_cformat(self):
-        self.assertEqual(cformat(1000, "RUB"), "1 000,00 ₽")
-        self.assertEqual(cformat(1000, "USD"), "1 000,00 $")
 
-    def test_get_exchange_rate(self):
-        self.assertGreater(get_exchange_rate("BTC", "USD"), 30000)
-        self.assertLess(get_exchange_rate("BTC", "USD"), 70000)
+@given("Crypto currency is {crypto}, to currency is {curr}")
+def have_convert_params(context, crypto, curr):
+    context.crypto = crypto
+    context.curr = curr
 
 
-if __name__ == "__main__":
-    unittest.main()
+@then("Result must be between {from_curr} and {to}")
+def expect_result(context, from_curr, to):
+    assert get_exchange_rate(context.crypto, context.curr) > float(from_curr)
+    assert get_exchange_rate(context.crypto, context.curr) < float(to)
+
+@given("Number is {number}, currency is {curr}")
+def have_convert_params(context, number, curr):
+    context.number = number
+    context.curr = curr
 
 
-
-
-print(cformat(1000, "UAH"))
+@then("Result must be _{result}_")
+def expect_result(context, result):
+    assert cformat(float(context.number), context.curr) == result

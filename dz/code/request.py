@@ -1,3 +1,5 @@
+from behave import given, then
+import babel.numbers as bab
 from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 from resources.config import CRYPTO_API_TOKEN
@@ -16,3 +18,5 @@ def get_exchange_rate(crypto, curr):
         return data[curr]
     except (ConnectionError, Timeout, TooManyRedirects) as e:
         print(e)
+    finally:
+        session.close()
