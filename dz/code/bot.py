@@ -1,6 +1,5 @@
 
 from resources.config import TOKEN
-from resources.messages import MESSAGES
 import logging
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage

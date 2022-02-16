@@ -23,7 +23,6 @@ async def handle_start(call: types.CallbackQuery, state: FSMContext):
     bot = call.bot
     await bot.delete_message(call.from_user.id, call.message.message_id)
     await States.state_from_currency.set()
-    print(await state.get_state())
     await bot.send_message(call.from_user.id, text=MESSAGES[await state.get_state()], reply_markup=markups.from_menu, parse_mode="Markdown")
 
 
@@ -34,9 +33,7 @@ async def handle_crypto(call: types.CallbackQuery, state: FSMContext):
     await bot.delete_message(call.from_user.id, call.message.message_id)
     from_currency = call.data.split('_')[1]
     dbworker.set(dbworker.make_key(call.from_user.id, "FROM_CURRENCY"), from_currency)
-    print(await state.get_state())
     await States.state_to_currency.set()
-    print(await state.get_state())
     await bot.send_message(
         call.from_user.id, 
         text=MESSAGES[await state.get_state()].format(dbworker.get(dbworker.make_key(call.from_user.id, "FROM_CURRENCY"))), 
@@ -51,7 +48,6 @@ async def handle_curr(call: types.CallbackQuery, state: FSMContext):
     bot = call.bot
     await bot.delete_message(call.from_user.id, call.message.message_id)
     to_currency = call.data.split('_')[1]
-    print(await state.get_state())
     if to_currency != "back":
         dbworker.set(dbworker.make_key(call.from_user.id, "TO_CURRENCY"), to_currency)
         await States.state_choice.set()
@@ -65,7 +61,6 @@ async def handle_curr(call: types.CallbackQuery, state: FSMContext):
             parse_mode="Markdown"
         )
     else:
-        print(await state.get_state())
         await States.state_from_currency.set()
         await bot.send_message(
             call.from_user.id, 
@@ -139,7 +134,6 @@ async def handle_result(call: types.CallbackQuery, state: FSMContext):
             reply_markup=markups.start_menu,
             parse_mode="Markdown"
         )
-
 
 
 def register_callback_query_handlers(dp: Dispatcher):

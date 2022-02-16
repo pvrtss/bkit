@@ -1,14 +1,6 @@
-import babel.numbers as bab
 import unittest
-from requests import Session
-from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 from ..request import get_exchange_rate
 from ..number_format import cformat
-import json
-
-
-def cformat(number: float, currency: str):
-    return bab.format_currency(number, currency, locale="ru_RU")
 
 class TestBotUtilities(unittest.TestCase):
     def test_cformat(self):

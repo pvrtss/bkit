@@ -7,7 +7,7 @@ import dbworker
 import markups
 from resources.messages import MESSAGES
 from request import get_exchange_rate
-import babel.numbers as bab
+from number_format import cformat
 
 
 async def cmd_start(message: types.Message, state: FSMContext):
@@ -26,9 +26,6 @@ async def cmd_help(message: types.Message, state: FSMContext):
 
 
 async def err_handle(message: types.Message, state: FSMContext):
-    print()
-    print(await state.get_state())
-    print()
     if await state.get_state() == None:
         return
     current_state = await state.get_state()
@@ -52,7 +49,7 @@ async def err_handle(message: types.Message, state: FSMContext):
     elif current_state == 'States:state_result':
         from_currency = dbworker.get(dbworker.make_key(message.from_user.id, "FROM_CURRENCY"))
         to_currency = dbworker.get(dbworker.make_key(message.from_user.id, "TO_CURRENCY"))
-        result = bab.format_currency(float(get_exchange_rate(from_currency, to_currency)), to_currency, locale="ru_RU")
+        result = cformat(float(get_exchange_rate(from_currency, to_currency)), to_currency, locale="ru_RU")
         
         reply_msg = MESSAGES['err'] + MESSAGES[current_state].format(
             from_currency,
@@ -62,6 +59,7 @@ async def err_handle(message: types.Message, state: FSMContext):
 
     
     await message.answer(reply_msg, parse_mode="Markdown", reply_markup=reply_markup)
+
 
 def register_message_handlers(dp: Dispatcher):
     dp.register_message_handler(cmd_start, commands=['start', 'help'])
