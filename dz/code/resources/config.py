@@ -1,8 +1,8 @@
 from aiogram.dispatcher.filters.state import State, StatesGroup
 
-TOKEN = "5054956358:AAE1OEv-NgcsB0iq0osEU0v57vdRG6LyJg0"
+TOKEN = "***"
 
-CRYPTO_API_TOKEN = "5f6385cb156e90c3e4c9a892b6c1516ecd507b019bcd7483cd1ff8ed8e288339"
+CRYPTO_API_TOKEN = "***"
 
 db_file = "resources/db.vdb"
 
