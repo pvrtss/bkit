@@ -30,3 +30,5 @@ MANIFEST
 *.docx
 *.tmp
 *.bat
+dz t/
+*__init__.py
